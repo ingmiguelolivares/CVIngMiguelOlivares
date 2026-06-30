@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.1.12, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  <meta name="description" content="Miguel Ángel Olivares Tenorio - Ingeniero de Sonido, músico, docente universitario y desarrollador con Python y Unity3D.">
+  <title>Miguel Ángel Olivares Tenorio | Perfil profesional</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/gallery/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=T63CHF">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=T63CHF" type="text/css">
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+    .language-switch {
+      margin-left: 1rem;
+    }
+    .language-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 2000;
+    }
+    .language-modal.is-visible {
+      display: flex;
+    }
+    .language-card {
+      width: min(100%, 520px);
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    .language-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .language-note {
+      margin-top: 1rem;
+      color: #666;
+    }
+    .detail-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 2100;
+    }
+    .detail-modal.is-visible {
+      display: flex;
+    }
+    .detail-card {
+      width: min(100%, 780px);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    .detail-close {
+      margin-left: auto;
+      display: inline-flex;
+    }
+    .detail-list {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+    .detail-list li + li {
+      margin-top: 0.75rem;
+    }
+    .detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .timeline {
+      position: relative;
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.35rem;
+      top: 0.2rem;
+      bottom: 0.2rem;
+      width: 2px;
+      background: rgba(34, 153, 132, 0.25);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 1.5rem 1.25rem;
+    }
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.42rem;
+      top: 0.4rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 999px;
+      background: #229984;
+      box-shadow: 0 0 0 4px rgba(34, 153, 132, 0.14);
+    }
+    .timeline-period {
+      display: inline-block;
+      margin-bottom: 0.35rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(34, 153, 132, 0.1);
+      color: #229984;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .timeline-title {
+      margin-bottom: 0.35rem;
+    }
+    .timeline-copy {
+      margin-bottom: 0.35rem;
+    }
+    .soundcloud-embeds {
+      margin: 0.75rem 0 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    .soundcloud-track {
+      border: 1px solid rgba(34, 153, 132, 0.16);
+      border-radius: 16px;
+      padding: 0.75rem;
+      background: rgba(34, 153, 132, 0.04);
+    }
+    .soundcloud-track-title {
+      display: inline-block;
+      margin-bottom: 0.45rem;
+      font-weight: 700;
+    }
+    .soundcloud-track a {
+      color: #229984;
+      text-decoration: none;
+    }
+    .soundcloud-track a:hover,
+    .soundcloud-track a:focus {
+      text-decoration: underline;
+    }
+    .soundcloud-track iframe {
+      width: 100%;
+      height: 120px;
+      border: 0;
+      border-radius: 12px;
+    }
+    .header5 .mbr-section-btn .btn {
+      color: #f7fbfa !important;
+      border: 1.5px solid rgba(247, 251, 250, 0.8) !important;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+    .header5 .mbr-section-btn .btn.btn-primary {
+      background-color: rgba(34, 153, 132, 0.22) !important;
+    }
+    .header5 .mbr-section-btn .btn.btn-primary-outline {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+    }
+    .header5 .mbr-section-btn .btn:hover,
+    .header5 .mbr-section-btn .btn:focus {
+      color: #ffffff !important;
+      border-color: #ffffff !important;
+    }
+    .header-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 1.5rem;
+      padding-left: 0;
+      list-style: none;
+    }
+    .header-menu-item {
+      margin: 0;
+    }
+    .navbar > .container,
+    .navbar-collapse,
+    .navbar-nav,
+    .navbar-buttons {
+      align-items: center;
+    }
+    .navbar-collapse {
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-right: 1.5rem;
+    }
+    .navbar-logo img {
+      width: 3rem;
+      height: 3rem;
+      object-fit: cover;
+      border-radius: 999px;
+      border: 2px solid rgba(34, 153, 132, 0.18);
+    }
+    .navbar-nav {
+      flex-wrap: nowrap;
+      gap: 0.15rem;
+    }
+    .navbar-nav .nav-link,
+    .navbar-buttons .btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      white-space: nowrap;
+    }
+    .navbar-nav .nav-link {
+      font-size: 0.92rem;
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
+    }
+    .navbar-buttons {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      margin-left: 0.75rem;
+    }
+    .navbar-buttons .btn {
+      font-size: 0.82rem;
+      padding: 0.65rem 0.95rem;
+    }
+    .list .item-wrap,
+    .list .item-wrap a,
+    .navbar-caption,
+    .mbr-text {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    @media (max-width: 767.98px) {
+      .navbar > .container {
+        align-items: center;
+      }
+      .navbar-brand {
+        max-width: calc(100% - 70px);
+      }
+      .navbar-collapse {
+        padding-top: 0.75rem;
+      }
+      .navbar-caption {
+        line-height: 1.1;
+      }
+      .navbar-buttons,
+      .mbr-section-btn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+      .navbar-buttons .btn,
+      .mbr-section-btn .btn {
+        margin: 0 !important;
+        white-space: normal;
+      }
+      .language-switch {
+        margin-left: 0;
+      }
+      .header-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .social-row {
+        justify-content: center;
+        gap: 0.75rem;
+      }
+    }
+    @media (max-width: 575.98px) {
+      .display-1 {
+        font-size: 2.75rem;
+      }
+      .display-2 {
+        font-size: 2.2rem;
+      }
+      .language-card {
+        padding: 1.5rem;
+      }
+      .detail-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-modal" id="language-modal" aria-hidden="true">
+    <div class="language-card">
+      <h2 class="mbr-section-title mbr-fonts-style display-5"><strong>Selecciona tu idioma</strong></h2>
+      <p class="mbr-text mbr-fonts-style display-7">Puedes ver este perfil en español o en inglés. También podrás cambiarlo luego desde el menú.</p>
+      <div class="language-actions">
+        <button class="btn btn-primary display-7" type="button" data-language-choice="es">Ver en español</button>
+        <button class="btn btn-primary-outline display-7" type="button" data-language-choice="en">View in English</button>
+      </div>
+      <p class="mbr-text mbr-fonts-style display-7 language-note">Guardaremos tu preferencia para próximas visitas.</p>
+    </div>
+  </div>
+  <div class="detail-modal" id="teaching-modal" aria-hidden="true">
+    <div class="detail-card">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <h3 class="mbr-section-title mbr-fonts-style display-5 mb-0"><strong>Experiencia docente</strong></h3>
+        <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-detail>cerrar</button>
+      </div>
+      <p class="mbr-text mbr-fonts-style display-7">Trayectoria en educación superior, liderazgo académico, docencia e investigación aplicada.</p>
+      <div class="timeline mbr-text mbr-fonts-style display-7">
+        <div class="timeline-item">
+          <span class="timeline-period">2022 - actual</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad Militar Nueva Granada</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Docente ocasional en Ingeniería Multimedia, Biomédica y Mecatrónica.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> orientación de asignaturas como Programación III, Audio y Video, Computación Gráfica, Realidad Virtual y Simulación, Procesamiento de Señales, Audio Procedural y Desarrollo de Videojuegos para Dispositivos Móviles.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> participación en proyectos de iniciación científica y consolidación de electivas en audio y tecnologías inmersivas.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2024</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>UNAD</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Docente de medio tiempo en Ingeniería Multimedia.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> desarrollo de contenidos y orientación de cursos de Diseño Sonoro Multimedia y Producción Audiovisual.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> articulación de enfoques de sonido y producción digital para formación a distancia.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2020 - 2024</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Uniempresarial</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Director de escuela, director de programas y profesor hora cátedra.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> coordinación académica de programas de ingeniería y áreas empresariales, docencia en videojuegos, sonido para videojuegos, desarrollo móvil y programación estructurada.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> actualización curricular de pregrados y especializaciones, apoyo a renovación de acreditación y fortalecimiento de programas duales y dual-virtuales.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2011 - 2020</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad de San Buenaventura</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Docente e investigador de tiempo completo en Ingeniería de Sonido e Ingeniería Multimedia.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> enseñanza en fundamentos de audio, MIDI, programación de audio, videojuegos, producción audiovisual, fotografía, video y lenguajes de programación.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> actualización curricular del programa, apoyo a registro calificado, coordinación de Ciencias Básicas y desarrollo de proyectos de investigación aplicados.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2022</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Fundación Universidad Jorge Tadeo Lozano</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Docente de educación continua.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> orientación del curso Diseño Multimedia 4.0 e introducción a realidad virtual.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> transferencia de conocimiento en herramientas inmersivas y multimedia aplicada.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2021 - 2022</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>TH Köln / colaboración internacional</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Desarrollo de soluciones VR con componente formativo y aplicado.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> diseño y desarrollo de una aplicación de entrenamiento auditivo espacial.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> integración de Oculus Quest 2 y múltiples plugins de binauralización en un contexto académico y clínico.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-modal" id="work-modal" aria-hidden="true">
+    <div class="detail-card">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <h3 class="mbr-section-title mbr-fonts-style display-5 mb-0"><strong>Experiencia laboral</strong></h3>
+        <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-detail>cerrar</button>
+      </div>
+      <p class="mbr-text mbr-fonts-style display-7">Experiencia en desarrollo interactivo, simulación, software y producción sonora profesional.</p>
+      <div class="timeline mbr-text mbr-fonts-style display-7">
+        <div class="timeline-item">
+          <span class="timeline-period">2021 - 2022</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>TH Köln</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Desarrollador Unity3D para una aplicación VR enfocada en entrenamiento de ubicación de objetos sonoros.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> desarrollo en Unity3D, integración con Oculus Quest 2, configuración de plugins de spatial audio y conexión cloud.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> implementación de Oculus Spatializer, Steam Audio Spatializer y 3DTi Binaural Spatializer en una solución aplicada a diagnóstico y tratamiento.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2016 - 2017</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Importeq SAS</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Coordinador de proyectos de simulación 3D y marketing digital.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> liderazgo de proyectos de simulación, desarrollo de entornos 3D, integración serial, uso de Arduino y Python para detección de eventos.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> construcción de un simulador de tiro montado y diseño de estrategias de posicionamiento para contenidos digitales.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2016</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>IG Consultores / FEMSA / Coca-Cola</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Ingeniero de software y programador.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> desarrollo de juegos y lógica de interacción para “Huella Hídrica” y “Agua para el Futuro” en Android y Windows.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> creación de un juego 3D estratégico y un juego 2D tipo puzzle con cálculo de consumo hídrico basado en decisiones del usuario.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2009 - 2011</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>OTROESTUDIO, Visound y DDB Worldwide Colombia</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Ingeniero de sonido y productor musical.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> producción de audio publicitario, streaming, grabación, edición y postproducción sonora.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> participación en proyectos comerciales con enfoque en calidad sonora y tiempos de entrega exigentes.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2007 - 2009</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>ARTE NOVA music lab y Translate IT Colombia</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Asistente de ingeniería, productor musical y editor de voz.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Funciones:</strong> grabación, edición de voice-over, asistencia técnica y producción musical para proyectos comerciales.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Logros:</strong> soporte a grabaciones para clientes nacionales e internacionales, incluyendo colaboraciones con YOYO Music Inc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-modal" id="research-modal" aria-hidden="true">
+    <div class="detail-card">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <h3 class="mbr-section-title mbr-fonts-style display-5 mb-0"><strong>Experiencia en investigación</strong></h3>
+        <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-detail>cerrar</button>
+      </div>
+      <p class="mbr-text mbr-fonts-style display-7">Participación en proyectos de investigación, desarrollo e innovación soportada por diferentes evidencias institucionales. Los primeros seis proyectos de esta línea de tiempo corresponden a la certificación del Grupo de Investigación Acústica Aplicada de la Universidad de San Buenaventura; adicionalmente, se incluyen soportes de la Universidad Militar Nueva Granada que amplían esta trayectoria.</p>
+      <div class="timeline mbr-text mbr-fonts-style display-7">
+        <div class="timeline-item">
+          <span class="timeline-period">2014</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Desarrollo de un videojuego de entrenamiento auditivo utilizando algoritmos de detección de tonos</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Investigador principal.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> diseño de un videojuego orientado al entrenamiento auditivo y al procesamiento de señales aplicado al reconocimiento tonal.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte destacado:</strong> liderazgo integral del proyecto desde la conceptualización hasta su desarrollo en el marco de investigación, desarrollo e innovación.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2012</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Desarrollo de un videojuego de simulación musical implementando interfaces hombre-máquina no convencionales</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Integrante del proyecto.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> exploración de nuevas formas de interacción musical a través de interfaces no convencionales.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte destacado:</strong> articulación entre música, tecnología interactiva y diseño de experiencias inmersivas.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2013 - 2014</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Desarrollo de una aplicación móvil para medición de niveles de presión sonora</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Integrante del proyecto.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> creación de una herramienta móvil para medición de presión sonora con utilidad académica y aplicada.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte destacado:</strong> contribución al vínculo entre audio, desarrollo móvil y medición acústica.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2016</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Entrenador interactivo para atención sostenida en usuarios con Alzheimer</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Coinvestigador.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> desarrollo de una solución interactiva con aplicación en salud y entrenamiento cognitivo.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte destacado:</strong> integración de herramientas digitales e interactivas para contextos clínicos y de bienestar.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2018</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Actos sonoros: Memorias y testimonios del postconflicto</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Coinvestigador.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> investigación y desarrollo alrededor del sonido, la memoria y la construcción de testimonios en contexto de postconflicto.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte destacado:</strong> conexión entre creación sonora, memoria histórica e investigación aplicada.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2026</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Estudio piloto de entrenamiento en funciones ejecutivas mediante Mindfulness con el apoyo de Realidad Virtual para personas con síntomas de ansiedad</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Investigador externo.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> uso de realidad virtual y mindfulness para el entrenamiento de funciones ejecutivas en población con síntomas de ansiedad.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte destacado:</strong> participación en un proyecto interdisciplinario que conecta inmersión tecnológica, salud mental y medición de impacto.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2024 - 2025</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad Militar Nueva Granada - PIC-ING-4027</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Proyecto:</strong> Sistemas de interacción para realidad mixta y entornos educativos.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Rol:</strong> Investigador principal, según acta de inicio y acta de liquidación técnica.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque y logro:</strong> desarrollo de herramientas digitales multimedia aplicadas al diseño geométrico y a entornos educativos, con cierre técnico satisfactorio y artículo sometido como producto comprometido.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2024 - 2025</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad Militar Nueva Granada - proyectos PIC adicionales</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Proyecto:</strong> PIC-ING-3894, relacionado con la evaluación de la inmersión en un videojuego comparando dos interfaces de audio procedural.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Soporte:</strong> documentación de cierre de proyecto presentada por Miguel Ángel Olivares Tenorio ante el comité de investigaciones.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Importancia:</strong> evidencia adicional de continuidad de trabajo investigativo en videojuegos, inmersión y audio interactivo dentro de la Universidad Militar.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">Vigencia UMNG / coinvestigación</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad Militar Nueva Granada - proyecto de investigación como coinvestigador</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Referencia:</strong> además de los PIC, existen soportes institucionales asociados a un proyecto de investigación con participación como coinvestigador en la UMNG.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Lectura curricular:</strong> esto amplía la experiencia investigativa más allá de los seis proyectos certificados por la Universidad de San Buenaventura y confirma continuidad en investigación aplicada en otro contexto universitario.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="detail-modal" id="education-modal" aria-hidden="true">
+    <div class="detail-card">
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <h3 class="mbr-section-title mbr-fonts-style display-5 mb-0"><strong>Educación y formación</strong></h3>
+        <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-detail>cerrar</button>
+      </div>
+      <p class="mbr-text mbr-fonts-style display-7">Formación académica principal y cursos complementarios que conectan ingeniería, sonido, programación y música.</p>
+      <div class="timeline mbr-text mbr-fonts-style display-7">
+        <div class="timeline-item">
+          <span class="timeline-period">2017</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad de los Andes</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Título:</strong> Magíster en Ingeniería de Sistemas y Computación.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> profundización en sistemas, computación y articulación entre tecnología, desarrollo e innovación aplicada.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2009</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad de San Buenaventura</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Título:</strong> Ingeniero de Sonido.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Enfoque:</strong> formación en acústica, producción de audio, grabación, tecnología musical y medios audiovisuales.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2013</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Emory University</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Curso:</strong> Introduction to Digital Sound Design.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte:</strong> fortalecimiento conceptual y técnico en diseño sonoro digital.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2012</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>University of Toronto</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Curso:</strong> Learn to Program: The Fundamentals.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte:</strong> base formal para consolidar habilidades en programación y pensamiento computacional.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-period">2000</span>
+          <h4 class="timeline-title mbr-fonts-style display-7"><strong>Universidad Nacional de Colombia</strong></h4>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Curso:</strong> Fundamentos de jazz.</p>
+          <p class="timeline-copy mbr-text mbr-fonts-style display-7"><strong>Aporte:</strong> formación musical complementaria que fortalece la dimensión artística de su perfil profesional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-logo">
+            <a href="#inicio">
+              <img src="assets/images/miguel.jpg" alt="Miniatura de Miguel Ángel Olivares Tenorio">
+            </a>
+          </span>
+          <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4" href="#inicio">Miguel Ángel Olivares Tenorio</a></span>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="#perfil">Perfil</a></li>
+            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="#especialidades">Especialidades</a></li>
+            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="#experiencia">Experiencia</a></li>
+            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="#proyectos">Proyectos</a></li>
+            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="#contacto">Contacto</a></li>
+          </ul>
+          <div class="navbar-buttons mbr-section-btn">
+            <a class="btn btn-primary display-4" href="#contacto">Hablemos</a>
+            <a class="btn btn-primary-outline display-4 language-switch" href="#" data-open-language-modal>ES | EN</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <section data-bs-version="5.1" class="header5 cid-tJS6uM4N87" id="inicio">
+    <div class="topbg"></div>
+    <div class="align-center container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-9">
+          <h1 class="mbr-section-title mbr-fonts-style mb-4 display-1"><strong>Miguel Ángel Olivares Tenorio</strong></h1>
+          <p class="mbr-text mbr-fonts-style mb-4 display-7">Ingeniero de Sonido, músico, Magíster en Ingeniería de Sistemas y Computación, docente universitario y desarrollador con Python y Unity3D. Combino audio, programación, simulación y experiencias interactivas para crear soluciones educativas, sonoras y audiovisuales.</p>
+          <div class="mbr-section-btn mt-3">
+            <a class="btn btn-primary display-7" href="#perfil">Ver perfil</a>
+            <a class="btn btn-primary-outline display-7" href="#contacto">Contactar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="header1 cid-tJS9vXDdRK" id="perfil">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-12 col-lg-7 image-wrapper">
+          <img class="w-100" src="assets/images/miguel.jpg" alt="Foto principal de Miguel Ángel Olivares Tenorio">
+        </div>
+        <div class="col-12 col-lg col-md-12">
+          <div class="text-wrapper align-left">
+            <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Perfil profesional</strong></h1>
+            <p class="mbr-text mbr-fonts-style mb-4 display-7">Ingeniero de Sonido y Magíster en Ingeniería de Sistemas y Computación, con trayectoria en producción de audio, desarrollo sonoro y diseño de experiencias auditivas interactivas. Mi trabajo se ha enfocado en la creación de contenidos inmersivos, aplicaciones y simuladores con tecnologías interactivas, integrando audio, medios digitales y videojuegos. Además, cuento con más de catorce años de experiencia en educación superior, liderazgo académico, innovación pedagógica y diseño curricular.</p>
+            <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-7" href="#contacto">Disponible para oportunidades académicas y tecnológicas</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="especialidades">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 content-head">
+          <div class="mbr-section-head mb-5">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Especialidades</strong></h4>
+            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Tres ejes que articulan mi experiencia entre ingeniería, creación sonora, docencia y desarrollo interactivo.</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item features-image col-12 col-md-6 col-lg-4">
+          <div class="item-wrapper">
+            <div class="item-img">
+              <img src="assets/images/miguel-produccion.png" alt="Audio, sonido y producción musical">
+            </div>
+            <div class="item-content">
+              <h5 class="item-title mbr-fonts-style display-5"><strong>Audio, sonido y producción musical</strong></h5>
+              <p class="mbr-text mbr-fonts-style display-7">Experiencia en producción de audio, diseño sonoro, audio para videojuegos y herramientas como Protools, Logic Pro, FMOD, Wwise, Adobe Premiere y After Effects.</p>
+              <div class="soundcloud-embeds mbr-fonts-style display-7">
+                <div class="soundcloud-track">
+                  <span class="soundcloud-track-title">Vocales</span>
+                  <iframe loading="lazy" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/miguel-olivares/vocales&color=%23229984&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+                </div>
+                <div class="soundcloud-track">
+                  <span class="soundcloud-track-title">Nació un campeón</span>
+                  <iframe loading="lazy" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/miguel-olivares/nacio-un-campeon-tema-08&color=%23229984&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+                </div>
+                <div class="soundcloud-track">
+                  <span class="soundcloud-track-title">Terpel - Enchula tu moto</span>
+                  <iframe loading="lazy" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/miguel-olivares/terpel-enchula-tu-moto&color=%23229984&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+                </div>
+                <div class="soundcloud-track">
+                  <span class="soundcloud-track-title">Aguardiente Nariño</span>
+                  <iframe loading="lazy" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/miguel-olivares/aguardiente-nari-o&color=%23229984&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+                </div>
+                <div class="soundcloud-track">
+                  <span class="soundcloud-track-title">Jingle Surtifruver</span>
+                  <iframe loading="lazy" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/miguel-olivares/jingle-surtifruver-4891010&color=%23229984&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item features-image col-12 col-md-6 col-lg-4">
+          <div class="item-wrapper">
+            <div class="item-img">
+              <img src="assets/images/miguel-programacion.png" alt="Desarrollo interactivo y programación">
+            </div>
+            <div class="item-content">
+              <h5 class="item-title mbr-fonts-style display-5"><strong>Desarrollo interactivo y programación</strong></h5>
+              <p class="mbr-text mbr-fonts-style display-7">Desarrollo con Python, C#, Kotlin, JavaScript, Java y C++, creando aplicaciones, videojuegos, simuladores y experiencias inmersivas en Unity3D y otros entornos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item features-image col-12 col-md-6 col-lg-4">
+          <div class="item-wrapper">
+            <div class="item-img">
+              <img src="assets/images/miguel-docencia.png" alt="Docencia y liderazgo académico">
+            </div>
+            <div class="item-content">
+              <h5 class="item-title mbr-fonts-style display-5"><strong>Docencia y liderazgo académico</strong></h5>
+              <p class="mbr-text mbr-fonts-style display-7">Más de 14 años en educación superior, con experiencia como docente, director de escuela y director de programas en ingeniería, multimedia, software y áreas afines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="header09 cid-tLAX5BnXkJ" id="logros">
+    <div class="container">
+      <div class="row">
+        <div class="content-wrap col-12 col-md-8">
+          <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>Logros destacados</strong></h1>
+          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">He liderado procesos de actualización curricular, renovación de registros calificados, desarrollo de especializaciones dual-virtuales y proyectos de simulación, realidad virtual y audio interactivo. También he integrado tecnologías como Oculus Quest 2, plugins de espacialización binaural, Arduino, Python y Unity3D en soluciones académicas y aplicadas.</p>
+          <div class="mbr-section-btn"><a class="btn btn-white-outline display-7" href="#experiencia">Ver experiencia</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="features15 cid-tLek7gQhG7" id="experiencia">
+    <div class="container">
+      <div class="mbr-section-head mb-5">
+        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Experiencia y fortalezas</strong></h4>
+      </div>
+      <div class="row justify-content-center">
+        <div class="item features-without-image col-12 col-lg-4">
+          <div class="item-wrapper">
+            <div class="img-wrapper">
+              <img src="assets/images/shop1.jpg" alt="Experiencia profesional">
+            </div>
+            <div class="card-box">
+              <h4 class="card-title mbr-fonts-style mb-3 display-5"><strong>Experiencia profesional</strong></h4>
+              <h5 class="card-text mbr-fonts-style display-7">Docente en la Universidad Militar Nueva Granada y la UNAD; director de programas y de escuela en Uniempresarial; docente e investigador en la Universidad de San Buenaventura; desarrollador y coordinador de proyectos en simulación 3D y software.</h5>
+              <div class="detail-actions">
+                <button class="btn btn-primary display-7" type="button" data-open-detail="teaching-modal">Ver experiencia docente</button>
+                <button class="btn btn-primary-outline display-7" type="button" data-open-detail="work-modal">Ver experiencia laboral</button>
+                <button class="btn btn-primary-outline display-7" type="button" data-open-detail="research-modal">Ver experiencia en investigación</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item features-without-image col-12 col-lg-4">
+          <div class="item-wrapper">
+            <div class="img-wrapper">
+              <img src="assets/images/shop2.jpg" alt="Herramientas y habilidades">
+            </div>
+            <div class="card-box">
+              <h4 class="card-title mbr-fonts-style mb-3 display-5"><strong>Herramientas y habilidades</strong></h4>
+              <h5 class="card-text mbr-fonts-style display-7">Unity3D, Visual Studio, Ionic, Android Studio, PyCharm, XCode y Node.js. Competencias en programación, diseño de experiencias inmersivas, producción audiovisual, investigación aplicada y trabajo interdisciplinario.</h5>
+            </div>
+          </div>
+        </div>
+        <div class="item features-without-image col-12 col-lg-4">
+          <div class="item-wrapper">
+            <div class="img-wrapper">
+              <img src="assets/images/shop3.jpg" alt="Educación y certificaciones">
+            </div>
+            <div class="card-box">
+              <h4 class="card-title mbr-fonts-style mb-3 display-5"><strong>Educación y formación</strong></h4>
+              <h5 class="card-text mbr-fonts-style display-7">Magíster en Ingeniería de Sistemas y Computación por la Universidad de los Andes e Ingeniero de Sonido por la Universidad de San Buenaventura. Formación complementaria en sound design, programación y jazz.</h5>
+              <div class="detail-actions">
+                <button class="btn btn-primary display-7" type="button" data-open-detail="education-modal">Ver formación en detalle</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="gallery1 mbr-gallery cid-tMlDYtQ5fF" id="proyectos">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 content-head">
+          <div class="mbr-section-head mb-5">
+            <h3 class="mbr-section-title mbr-fonts-style align-center m-0 display-2"><strong>Proyectos destacados</strong></h3>
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-4 display-7">Una muestra de proyectos donde convergen videojuegos, audio interactivo, simulación y tecnología educativa.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="row mbr-gallery mbr-masonry" data-masonry="{&quot;percentPosition&quot;: true }">
+        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
+          <div class="item-wrapper">
+            <img class="w-100" src="assets/images/gallery03.jpg" alt="ViWer-S realidad virtual y audio espacial">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
+          <div class="item-wrapper">
+            <img class="w-100" src="assets/images/gallery13.jpg" alt="Simuladores y videojuegos educativos">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
+          <div class="item-wrapper">
+            <img class="w-100" src="assets/images/gallery10.jpg" alt="Investigación aplicada en audio y salud">
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-12 col-lg-10">
+          <p class="mbr-text mbr-fonts-style align-center display-7">Entre los proyectos más relevantes se encuentran el desarrollo en Unity3D de una aplicación VR para entrenamiento en ubicación de objetos sonoros en TH Köln, el simulador de tiro montado con integración por puerto serial, los juegos “Huella Hídrica” y “Agua para el Futuro”, y varios proyectos de investigación en videojuegos musicales, medición de presión sonora y entrenamiento auditivo interactivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="contacts2 map1 cid-tLdYHD757A" id="contacto">
+    <div class="container">
+      <div class="mbr-section-head mb-5">
+        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Contacto</strong></h3>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="card col-12 col-md-5">
+          <div class="card-wrapper">
+            <div class="text-wrapper">
+              <h5 class="cardTitle mbr-fonts-style mb-2 display-5"><strong>Canales disponibles</strong></h5>
+              <ul class="list mbr-fonts-style display-7">
+                <li class="mbr-text item-wrap">Correo: <a href="mailto:Miguelolivares1981@gmail.com" class="text-primary">Miguelolivares1981@gmail.com</a></li>
+                <li class="mbr-text item-wrap">Teléfono: <a href="tel:+573118076448" class="text-primary">+57 311 807 6448</a></li>
+                <li class="mbr-text item-wrap">SoundCloud: <a href="https://soundcloud.com/miguel-olivares" class="text-primary" target="_blank">soundcloud.com/miguel-olivares</a></li>
+                <li class="mbr-text item-wrap">Ubicación: Bogotá, Colombia</li>
+                <li class="mbr-text item-wrap">Idiomas: Español nativo, inglés B2, francés intermedio</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="map-wrapper col-12 col-md-7">
+          <div class="google-map">
+            <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127139.40449559916!2d-74.22312222374373!3d4.648625944133465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a3b85c6ad7%3A0x45c6c2f4b54d2d6f!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1719763200000!5m2!1ses!2sco" allowfullscreen=""></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-bs-version="5.1" class="footer1 programm5 cid-tJS9NNcTLZ" once="footers" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="row-links mb-4">
+          <ul class="header-menu">
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="#perfil" class="text-danger">Perfil</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="#especialidades" class="text-danger text-primary">Especialidades</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="#experiencia" class="text-danger">Experiencia</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="#proyectos" class="text-danger text-primary">Proyectos</a></li>
+            <li class="header-menu-item mbr-fonts-style display-5"><a href="#contacto" class="text-danger">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-12">
+          <div class="social-row">
+            <div class="soc-item"><a href="mailto:Miguelolivares1981@gmail.com" target="_blank"><span class="mbr-iconfont socicon-mail socicon"></span></a></div>
+            <div class="soc-item"><a href="https://soundcloud.com/miguel-olivares" target="_blank"><span class="mbr-iconfont socicon-soundcloud socicon"></span></a></div>
+            <div class="soc-item"><a href="tel:+573118076448" target="_blank"><span class="mbr-iconfont socicon-viber socicon"></span></a></div>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <p class="mbr-fonts-style copyright display-7">© 2026 Miguel Ángel Olivares Tenorio. Perfil profesional enfocado en audio, tecnología interactiva y educación superior.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/masonry/masonry.pkgd.min.js"></script>
+  <script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script>
+    (function () {
+      const currentLang = 'es';
+      const routes = { es: 'index.html', en: 'en.html' };
+      const storedLang = localStorage.getItem('preferredLanguage');
+      const modal = document.getElementById('language-modal');
+      const manualTriggers = document.querySelectorAll('[data-open-language-modal]');
+      const choiceButtons = document.querySelectorAll('[data-language-choice]');
+      const detailTriggers = document.querySelectorAll('[data-open-detail]');
+      const detailClosers = document.querySelectorAll('[data-close-detail]');
+      const detailModals = document.querySelectorAll('.detail-modal');
+
+      function showModal() {
+        modal.classList.add('is-visible');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      function hideModal() {
+        modal.classList.remove('is-visible');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      function goToLanguage(lang) {
+        localStorage.setItem('preferredLanguage', lang);
+        if (lang !== currentLang) {
+          window.location.href = routes[lang];
+          return;
+        }
+        hideModal();
+      }
+
+      if (storedLang && storedLang !== currentLang) {
+        window.location.replace(routes[storedLang]);
+      } else if (!storedLang) {
+        showModal();
+      }
+
+      manualTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', function (event) {
+          event.preventDefault();
+          showModal();
+        });
+      });
+
+      choiceButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+          goToLanguage(button.getAttribute('data-language-choice'));
+        });
+      });
+
+      detailTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', function () {
+          const target = document.getElementById(trigger.getAttribute('data-open-detail'));
+          if (!target) return;
+          target.classList.add('is-visible');
+          target.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      detailClosers.forEach((button) => {
+        button.addEventListener('click', function () {
+          const parent = button.closest('.detail-modal');
+          if (!parent) return;
+          parent.classList.remove('is-visible');
+          parent.setAttribute('aria-hidden', 'true');
+        });
+      });
+
+      detailModals.forEach((modalEl) => {
+        modalEl.addEventListener('click', function (event) {
+          if (event.target === modalEl) {
+            modalEl.classList.remove('is-visible');
+            modalEl.setAttribute('aria-hidden', 'true');
+          }
+        });
+      });
+    })();
+  </script>
+  <input name="animation" type="hidden">
+</body>
+</html>
