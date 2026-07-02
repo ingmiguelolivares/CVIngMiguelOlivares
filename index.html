@@ -184,28 +184,6 @@
     .soundcloud-modal-title {
       margin-bottom: 1rem;
     }
-    .interactive-project-link {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 0.85rem;
-      color: #229984;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .interactive-project-link:hover,
-    .interactive-project-link:focus {
-      text-decoration: underline;
-    }
-    .interactive-project-note {
-      margin-top: 0.75rem;
-    }
-    .interactive-project-frame {
-      width: 100%;
-      min-height: 70vh;
-      border: 0;
-      border-radius: 12px;
-      background: #f6f8f8;
-    }
     .header5 .mbr-section-btn .btn {
       color: #f7fbfa !important;
       border: 1.5px solid rgba(247, 251, 250, 0.8) !important;
@@ -574,15 +552,6 @@
       <iframe class="soundcloud-player-frame" data-soundcloud-player title="Reproductor de SoundCloud" loading="lazy" allow="autoplay"></iframe>
     </div>
   </div>
-  <div class="detail-modal" id="interactive-project-modal" aria-hidden="true">
-    <div class="detail-card">
-      <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-project>cerrar</button>
-      <h4 class="soundcloud-modal-title mbr-fonts-style display-5"><strong data-project-modal-title>Runner Procedural</strong></h4>
-      <p class="mbr-text mbr-fonts-style display-7">Desarrollo en Unity3D implementando audio procedural en tiempo real usando síntesis aditiva, por wavetables y síntesis FM.</p>
-      <iframe class="interactive-project-frame" data-project-frame title="Runner Procedural" loading="lazy" allow="fullscreen; autoplay"></iframe>
-      <p class="interactive-project-note mbr-text mbr-fonts-style display-7">Si el proyecto no carga dentro del sitio, puedes abrirlo directamente en <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer">runnerprocedural.vercel.app</a>.</p>
-    </div>
-  </div>
   <section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu">
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
       <div class="container">
@@ -689,7 +658,6 @@
             <div class="item-content">
               <h5 class="item-title mbr-fonts-style display-5"><strong>Desarrollo interactivo y programación</strong></h5>
               <p class="mbr-text mbr-fonts-style display-7">Desarrollo con Python, C#, Kotlin, JavaScript, Java y C++, creando aplicaciones, videojuegos, simuladores y experiencias inmersivas en Unity3D y otros entornos.</p>
-              <a class="interactive-project-link" href="#" data-open-project data-project-title="Runner Procedural" data-project-src="https://runnerprocedural.vercel.app/">Runner Procedural · Unity3D + Audio Procedural en tiempo real</a>
             </div>
           </div>
         </div>
@@ -883,11 +851,6 @@
       const soundcloudPlayer = document.querySelector('[data-soundcloud-player]');
       const soundcloudTitle = document.querySelector('[data-soundcloud-modal-title]');
       const soundcloudClosers = document.querySelectorAll('[data-close-soundcloud]');
-      const projectTriggers = document.querySelectorAll('[data-open-project]');
-      const projectModal = document.getElementById('interactive-project-modal');
-      const projectFrame = document.querySelector('[data-project-frame]');
-      const projectTitle = document.querySelector('[data-project-modal-title]');
-      const projectClosers = document.querySelectorAll('[data-close-project]');
 
       function showModal() {
         modal.classList.add('is-visible');
@@ -905,15 +868,6 @@
         soundcloudModal.setAttribute('aria-hidden', 'true');
         if (soundcloudPlayer) {
           soundcloudPlayer.setAttribute('src', '');
-        }
-      }
-
-      function closeProjectModal() {
-        if (!projectModal) return;
-        projectModal.classList.remove('is-visible');
-        projectModal.setAttribute('aria-hidden', 'true');
-        if (projectFrame) {
-          projectFrame.setAttribute('src', '');
         }
       }
 
@@ -978,30 +932,11 @@
         button.addEventListener('click', closeSoundcloudModal);
       });
 
-      projectTriggers.forEach((trigger) => {
-        trigger.addEventListener('click', function (event) {
-          event.preventDefault();
-          if (!projectModal || !projectFrame || !projectTitle) return;
-          projectTitle.textContent = trigger.getAttribute('data-project-title') || 'Runner Procedural';
-          projectFrame.setAttribute('src', trigger.getAttribute('data-project-src') || '');
-          projectModal.classList.add('is-visible');
-          projectModal.setAttribute('aria-hidden', 'false');
-        });
-      });
-
-      projectClosers.forEach((button) => {
-        button.addEventListener('click', closeProjectModal);
-      });
-
       detailModals.forEach((modalEl) => {
         modalEl.addEventListener('click', function (event) {
           if (event.target === modalEl) {
             if (modalEl === soundcloudModal) {
               closeSoundcloudModal();
-              return;
-            }
-            if (modalEl === projectModal) {
-              closeProjectModal();
               return;
             }
             modalEl.classList.remove('is-visible');
