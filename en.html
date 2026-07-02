@@ -202,8 +202,7 @@
     .interactive-project-actions {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.75rem;
       margin: 0.75rem 0 1rem;
     }
@@ -214,7 +213,7 @@
     .interactive-project-frame {
       width: 100%;
       aspect-ratio: 16 / 9;
-      min-height: min(58vh, 620px);
+      min-height: min(68vh, 700px);
       border: 0;
       border-radius: 12px;
       background: #f6f8f8;
@@ -594,7 +593,6 @@
       <p class="mbr-text mbr-fonts-style display-7">Unity3D development implementing real-time procedural audio using additive synthesis, wavetable synthesis and FM synthesis.</p>
       <p class="mbr-text mbr-fonts-style display-7">In this demo you control a runner where audio is generated dynamically in real time according to interaction, movement and in-game events. The experience showcases how different procedural synthesis techniques reshape the sound response of the game instead of relying only on pre-recorded clips.</p>
       <div class="interactive-project-actions">
-        <button class="btn btn-primary display-7" type="button" data-close-project>Close demo</button>
         <p class="interactive-project-note mbr-text mbr-fonts-style display-7">If the project does not load inside the site, you can open it directly at <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer">runnerprocedural.vercel.app</a>.</p>
       </div>
       <iframe class="interactive-project-frame" data-project-frame title="Runner Procedural" loading="lazy" allow="fullscreen; autoplay"></iframe>
