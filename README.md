@@ -72,3 +72,7 @@ Luego en GitHub:
 - Refinar el `CONTENT_GUIDE.md` para que refleje la estructura actual del portafolio
 - Incorporar más proyectos destacados con recursos visuales
 - Ajustar detalles finos de responsive y jerarquía visual
+
+## Test
+
+- Cambio mínimo para forzar un nuevo despliegue en GitHub Pages.
