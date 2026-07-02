@@ -199,9 +199,22 @@
     .interactive-project-note {
       margin-top: 0.75rem;
     }
+    .interactive-project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .interactive-project-card {
+      width: min(100%, 1180px);
+      max-height: 92vh;
+    }
     .interactive-project-frame {
       width: 100%;
-      min-height: 70vh;
+      aspect-ratio: 16 / 9;
+      min-height: min(72vh, 720px);
       border: 0;
       border-radius: 12px;
       background: #f6f8f8;
@@ -575,12 +588,16 @@
     </div>
   </div>
   <div class="detail-modal" id="interactive-project-modal" aria-hidden="true">
-    <div class="detail-card">
+    <div class="detail-card interactive-project-card">
       <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-project>cerrar</button>
       <h4 class="soundcloud-modal-title mbr-fonts-style display-5"><strong data-project-modal-title>Runner Procedural</strong></h4>
       <p class="mbr-text mbr-fonts-style display-7">Desarrollo en Unity3D implementando audio procedural en tiempo real usando síntesis aditiva, por wavetables y síntesis FM.</p>
+      <p class="mbr-text mbr-fonts-style display-7">En esta demo controlas un runner donde el audio se genera dinámicamente en tiempo real según la interacción, el movimiento y los eventos del entorno. La experiencia permite explorar cómo diferentes técnicas de síntesis procedural modifican la respuesta sonora del juego en lugar de depender únicamente de clips pregrabados.</p>
       <iframe class="interactive-project-frame" data-project-frame title="Runner Procedural" loading="lazy" allow="fullscreen; autoplay"></iframe>
-      <p class="interactive-project-note mbr-text mbr-fonts-style display-7">Si el proyecto no carga dentro del sitio, puedes abrirlo directamente en <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer">runnerprocedural.vercel.app</a>.</p>
+      <div class="interactive-project-actions">
+        <p class="interactive-project-note mbr-text mbr-fonts-style display-7">Si el proyecto no carga dentro del sitio, puedes abrirlo directamente en <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer">runnerprocedural.vercel.app</a>.</p>
+        <button class="btn btn-primary display-7" type="button" data-close-project>Cerrar demo</button>
+      </div>
     </div>
   </div>
   <section data-bs-version="5.1" class="menu menu2 cid-tJS6tZXiPa" once="menu" id="menu">
