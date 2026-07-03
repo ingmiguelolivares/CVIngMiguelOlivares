@@ -196,6 +196,11 @@
     .interactive-project-link:focus {
       text-decoration: underline;
     }
+    .interactive-project-group-title {
+      margin: 1rem 0 0.35rem;
+      color: #229984;
+      font-weight: 700;
+    }
     .interactive-project-note {
       margin-top: 0.75rem;
     }
@@ -211,9 +216,11 @@
       max-height: 92vh;
     }
     .interactive-project-frame {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      min-height: min(68vh, 700px);
+      display: block;
+      width: min(100%, var(--project-frame-max-width, 100%));
+      margin: 0 auto;
+      aspect-ratio: var(--project-aspect-ratio, 16 / 9);
+      min-height: var(--project-min-height, min(68vh, 700px));
       border: 0;
       border-radius: 12px;
       background: #f6f8f8;
@@ -590,10 +597,10 @@
     <div class="detail-card interactive-project-card">
       <button class="btn btn-primary-outline display-7 detail-close" type="button" data-close-project>close</button>
       <h4 class="soundcloud-modal-title mbr-fonts-style display-5"><strong data-project-modal-title>Runner Procedural</strong></h4>
-      <p class="mbr-text mbr-fonts-style display-7">Unity3D development implementing real-time procedural audio using additive synthesis, wavetable synthesis and FM synthesis.</p>
-      <p class="mbr-text mbr-fonts-style display-7">In this demo you control a runner where audio is generated dynamically in real time according to interaction, movement and in-game events. The experience showcases how different procedural synthesis techniques reshape the sound response of the game instead of relying only on pre-recorded clips.</p>
+      <p class="mbr-text mbr-fonts-style display-7" data-project-modal-summary>Unity3D development implementing real-time procedural audio using additive synthesis, wavetable synthesis and FM synthesis.</p>
+      <p class="mbr-text mbr-fonts-style display-7" data-project-modal-description>In this demo you control a runner where audio is generated dynamically in real time according to interaction, movement and in-game events. The experience showcases how different procedural synthesis techniques reshape the sound response of the game instead of relying only on pre-recorded clips.</p>
       <div class="interactive-project-actions">
-        <p class="interactive-project-note mbr-text mbr-fonts-style display-7">If the project does not load inside the site, you can open it directly at <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer">runnerprocedural.vercel.app</a>.</p>
+        <p class="interactive-project-note mbr-text mbr-fonts-style display-7">If the project does not load inside the site, you can open it directly at <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer" data-project-modal-link>runnerprocedural.vercel.app</a>.</p>
       </div>
       <iframe class="interactive-project-frame" data-project-frame title="Runner Procedural" loading="lazy" allow="fullscreen; autoplay"></iframe>
     </div>
@@ -705,7 +712,20 @@
             <div class="item-content">
               <h5 class="item-title mbr-fonts-style display-5"><strong>Interactive development and programming</strong></h5>
               <p class="mbr-text mbr-fonts-style display-7">Development with Python, C#, Kotlin, JavaScript, Java and C++, creating applications, videogames, simulators and immersive experiences in Unity3D and related environments.</p>
+              <p class="interactive-project-group-title mbr-fonts-style display-7">Interactive demos</p>
               <a class="interactive-project-link" href="#" data-open-project data-project-title="Runner Procedural" data-project-src="https://runnerprocedural.vercel.app/">Runner Procedural · Unity3D + Real-time Procedural Audio</a>
+              <p class="interactive-project-group-title mbr-fonts-style display-7">Audio Coding - Procedural Audio</p>
+              <a class="interactive-project-link" href="#"
+                data-open-project
+                data-project-title="Piano Procedural"
+                data-project-src="https://ingmiguelolivares.github.io/PianoProcedural/"
+                data-project-summary="Real-time procedural piano using different waveforms, additive synthesis, wavetables and FM synthesis."
+                data-project-description="This demo lets you play a procedural piano and reshape the sound expressively in real time. You can explore the ADSR envelope, adjust low-frequency oscillators in amplitude and pitch, and hear how the instrument changes while combining multiple synthesis approaches."
+                data-project-link="https://ingmiguelolivares.github.io/PianoProcedural/"
+                data-project-link-label="ingmiguelolivares.github.io/PianoProcedural/"
+                data-project-aspect-ratio="9 / 16"
+                data-project-min-height="min(78vh, 820px)"
+                data-project-max-width="440px">Piano Procedural · Interactive synthesizer 9:16</a>
             </div>
           </div>
         </div>
@@ -903,6 +923,9 @@
       const projectModal = document.getElementById('interactive-project-modal');
       const projectFrame = document.querySelector('[data-project-frame]');
       const projectTitle = document.querySelector('[data-project-modal-title]');
+      const projectSummary = document.querySelector('[data-project-modal-summary]');
+      const projectDescription = document.querySelector('[data-project-modal-description]');
+      const projectLink = document.querySelector('[data-project-modal-link]');
       const projectClosers = document.querySelectorAll('[data-close-project]');
 
       function showModal() {
@@ -934,6 +957,9 @@
         }
         if (projectFrame) {
           projectFrame.setAttribute('src', '');
+          projectFrame.style.removeProperty('--project-aspect-ratio');
+          projectFrame.style.removeProperty('--project-min-height');
+          projectFrame.style.removeProperty('--project-frame-max-width');
         }
       }
 
@@ -1003,10 +1029,24 @@
           event.preventDefault();
           if (!projectModal || !projectFrame || !projectTitle) return;
           projectTitle.textContent = trigger.getAttribute('data-project-title') || 'Runner Procedural';
+          if (projectSummary) {
+            projectSummary.textContent = trigger.getAttribute('data-project-summary') || '';
+          }
+          if (projectDescription) {
+            projectDescription.textContent = trigger.getAttribute('data-project-description') || '';
+          }
+          if (projectLink) {
+            const url = trigger.getAttribute('data-project-link') || trigger.getAttribute('data-project-src') || '';
+            projectLink.setAttribute('href', url);
+            projectLink.textContent = trigger.getAttribute('data-project-link-label') || url.replace(/^https?:\/\//, '');
+          }
           const projectCard = projectModal.querySelector('.interactive-project-card');
           if (projectCard) {
             projectCard.scrollTop = 0;
           }
+          projectFrame.style.setProperty('--project-aspect-ratio', trigger.getAttribute('data-project-aspect-ratio') || '16 / 9');
+          projectFrame.style.setProperty('--project-min-height', trigger.getAttribute('data-project-min-height') || 'min(68vh, 700px)');
+          projectFrame.style.setProperty('--project-frame-max-width', trigger.getAttribute('data-project-max-width') || '100%');
           projectFrame.setAttribute('src', trigger.getAttribute('data-project-src') || '');
           projectModal.classList.add('is-visible');
           projectModal.setAttribute('aria-hidden', 'false');
