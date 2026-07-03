@@ -927,6 +927,10 @@
         if (!projectModal) return;
         projectModal.classList.remove('is-visible');
         projectModal.setAttribute('aria-hidden', 'true');
+        const projectCard = projectModal.querySelector('.interactive-project-card');
+        if (projectCard) {
+          projectCard.scrollTop = 0;
+        }
         if (projectFrame) {
           projectFrame.setAttribute('src', '');
         }
@@ -998,6 +1002,10 @@
           event.preventDefault();
           if (!projectModal || !projectFrame || !projectTitle) return;
           projectTitle.textContent = trigger.getAttribute('data-project-title') || 'Runner Procedural';
+          const projectCard = projectModal.querySelector('.interactive-project-card');
+          if (projectCard) {
+            projectCard.scrollTop = 0;
+          }
           projectFrame.setAttribute('src', trigger.getAttribute('data-project-src') || '');
           projectModal.classList.add('is-visible');
           projectModal.setAttribute('aria-hidden', 'false');
