@@ -225,6 +225,26 @@
       border-radius: 12px;
       background: #f6f8f8;
     }
+    .interactive-project-facts {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin: 0 0 1rem;
+    }
+    .interactive-project-facts.is-visible {
+      display: grid;
+    }
+    .interactive-project-fact {
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: #f6fbfa;
+      border: 1px solid rgba(34, 153, 132, 0.14);
+    }
+    .interactive-project-fact strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #229984 !important;
+    }
     .project-card-trigger {
       display: block;
       color: inherit;
@@ -675,6 +695,11 @@
       <h4 class="soundcloud-modal-title mbr-fonts-style display-5"><strong data-project-modal-title>Runner Procedural</strong></h4>
       <p class="mbr-text mbr-fonts-style display-7" data-project-modal-summary>Unity3D development implementing real-time procedural audio using additive synthesis, wavetable synthesis and FM synthesis.</p>
       <p class="mbr-text mbr-fonts-style display-7" data-project-modal-description>In this demo you control a runner where audio is generated dynamically in real time according to interaction, movement and in-game events. The experience showcases how different procedural synthesis techniques reshape the sound response of the game instead of relying only on pre-recorded clips.</p>
+      <div class="interactive-project-facts" data-project-modal-facts>
+        <div class="interactive-project-fact mbr-text mbr-fonts-style display-7"><strong>Role</strong><span data-project-modal-role></span></div>
+        <div class="interactive-project-fact mbr-text mbr-fonts-style display-7"><strong>Technologies</strong><span data-project-modal-tech></span></div>
+        <div class="interactive-project-fact mbr-text mbr-fonts-style display-7"><strong>Impact</strong><span data-project-modal-impact></span></div>
+      </div>
       <div class="interactive-project-actions">
         <p class="interactive-project-note mbr-text mbr-fonts-style display-7">If the project does not load inside the site, you can open it directly at <a href="https://runnerprocedural.vercel.app/" target="_blank" rel="noopener noreferrer" data-project-modal-link>runnerprocedural.vercel.app</a>.</p>
       </div>
@@ -1035,10 +1060,29 @@
             <p class="project-card-title mbr-fonts-style display-7"><strong>Toteando Cueros</strong></p>
           </a>
         </div>
+        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
+          <a class="item-wrapper project-card-trigger" href="#"
+            data-open-project
+            data-project-title="Metamundos"
+            data-project-src="https://www.youtube.com/embed/mdbj9Obv95k"
+                data-project-summary="Immersive Unity experience for virtual reality, focused on interactive cultural journeys with spatial audio, body-based activities and visual progress cues."
+                data-project-description="Metamundos offers an XR journey through cultural territories such as Palenque, Guajira, Vaupés, Caquetá, Mompox and San Andrés. During the experience, the user signs in with an ID document, takes part in movement, observation, object-selection, rhythm, memory and exploration activities, and interacts using Meta Quest hands and controllers. The project includes session logging, results generation and local-mode operation when there is no internet connection. This video shows the general flow of the project, its environments, core mechanics and the way XR technology is used to build an educational, sensory and interactive experience."
+                data-project-role="Design and development of an immersive XR experience"
+                data-project-tech="Unity, Meta Quest, XR Interaction Toolkit, spatial audio, local storage"
+                data-project-impact="Transforms cultural content into an educational, sensory and interactive experience that can also run offline"
+                data-project-link="https://youtu.be/mdbj9Obv95k"
+                data-project-link-label="youtu.be/mdbj9Obv95k"
+                data-project-aspect-ratio="16 / 9"
+            data-project-min-height="min(72vh, 760px)"
+            data-project-max-width="100%">
+            <img class="w-100" src="https://img.youtube.com/vi/mdbj9Obv95k/hqdefault.jpg" alt="Metamundos - immersive virtual reality experience" loading="lazy">
+            <p class="project-card-title mbr-fonts-style display-7"><strong>Metamundos</strong></p>
+          </a>
+        </div>
       </div>
       <div class="row justify-content-center mt-4">
         <div class="col-12 col-lg-10">
-          <p class="mbr-text mbr-fonts-style align-center display-7">This selection brings together six representative interactive-development projects: <strong>Ciberpunk Race</strong> for Imaginatio 2024, <strong>PIBO</strong> as an educational application for children with Asperger’s syndrome, the <strong>Mounted Shooting Simulator</strong> with serial integration and Arduino, the environmental-learning games <strong>Agua para el Futuro</strong> and <strong>Huella Hídrica</strong>, and <strong>Toteando Cueros</strong> as a musical simulation videogame based on Colombian folk traditions.</p>
+          <p class="mbr-text mbr-fonts-style align-center display-7">This selection brings together representative interactive-development projects: <strong>Ciberpunk Race</strong> for Imaginatio 2024, <strong>PIBO</strong> as an educational application for children with Asperger’s syndrome, the <strong>Mounted Shooting Simulator</strong> with serial integration and Arduino, the environmental-learning games <strong>Agua para el Futuro</strong> and <strong>Huella Hídrica</strong>, <strong>Toteando Cueros</strong> as a musical simulation videogame based on Colombian folk traditions, and <strong>Metamundos</strong> as an immersive virtual-reality experience with cultural and educational focus.</p>
         </div>
       </div>
     </div>
@@ -1131,6 +1175,10 @@
       const projectTitle = document.querySelector('[data-project-modal-title]');
       const projectSummary = document.querySelector('[data-project-modal-summary]');
       const projectDescription = document.querySelector('[data-project-modal-description]');
+      const projectFacts = document.querySelector('[data-project-modal-facts]');
+      const projectRole = document.querySelector('[data-project-modal-role]');
+      const projectTech = document.querySelector('[data-project-modal-tech]');
+      const projectImpact = document.querySelector('[data-project-modal-impact]');
       const projectLink = document.querySelector('[data-project-modal-link]');
       const projectClosers = document.querySelectorAll('[data-close-project]');
       const portfolioTriggers = document.querySelectorAll('[data-open-portfolio]');
@@ -1180,6 +1228,9 @@
           projectFrame.style.removeProperty('--project-aspect-ratio');
           projectFrame.style.removeProperty('--project-min-height');
           projectFrame.style.removeProperty('--project-frame-max-width');
+        }
+        if (projectFacts) {
+          projectFacts.classList.remove('is-visible');
         }
       }
 
@@ -1280,6 +1331,21 @@
           }
           if (projectDescription) {
             projectDescription.textContent = trigger.getAttribute('data-project-description') || '';
+          }
+          const role = trigger.getAttribute('data-project-role') || '';
+          const tech = trigger.getAttribute('data-project-tech') || '';
+          const impact = trigger.getAttribute('data-project-impact') || '';
+          if (projectRole) {
+            projectRole.textContent = role;
+          }
+          if (projectTech) {
+            projectTech.textContent = tech;
+          }
+          if (projectImpact) {
+            projectImpact.textContent = impact;
+          }
+          if (projectFacts) {
+            projectFacts.classList.toggle('is-visible', !!(role || tech || impact));
           }
           if (projectLink) {
             const url = trigger.getAttribute('data-project-link') || trigger.getAttribute('data-project-src') || '';
