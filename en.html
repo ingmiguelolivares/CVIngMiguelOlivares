@@ -298,6 +298,27 @@
       object-fit: cover;
       display: block;
     }
+    .portfolio-project-media.is-hidden,
+    .portfolio-project-thumbs.is-hidden,
+    .portfolio-project-video:not(.is-visible),
+    .portfolio-project-action-link:not(.is-visible) {
+      display: none !important;
+    }
+    .portfolio-project-video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 18px;
+      background: #edf3f2;
+      box-shadow: 0 16px 40px rgba(8, 103, 132, 0.16);
+      margin: 0 0 1rem;
+    }
+    .portfolio-project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0 1.1rem;
+    }
     .portfolio-project-highlights {
       padding-left: 1.2rem;
       margin: 1rem 0 0;
@@ -320,6 +341,253 @@
       display: block;
       margin-bottom: 0.2rem;
       color: #229984 !important;
+    }
+    .gallery1#projects {
+      background:
+        radial-gradient(circle at top left, rgba(34, 153, 132, 0.1), transparent 28%),
+        linear-gradient(180deg, #f7fbfa 0%, #ffffff 24%, #f2f8f7 100%);
+    }
+    .project-gallery-shell {
+      position: relative;
+      padding: 1.5rem 0 0.5rem;
+    }
+    .project-gallery-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 50%;
+      width: min(100%, 1040px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(34, 153, 132, 0.28), transparent);
+      transform: translateX(-50%);
+    }
+    .project-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+    .project-gallery-item {
+      display: flex;
+      min-width: 0;
+    }
+    .project-gallery-item.is-featured {
+      grid-column: span 6;
+    }
+    .project-gallery-item.is-standard {
+      grid-column: span 3;
+    }
+    .project-gallery-item.is-tall .project-gallery-card {
+      min-height: 100%;
+    }
+    .project-card-trigger.project-gallery-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(34, 153, 132, 0.12);
+      box-shadow: 0 22px 48px rgba(18, 73, 68, 0.1);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      isolation: isolate;
+    }
+    .project-card-trigger.project-gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(8, 17, 24, 0) 0%, rgba(8, 17, 24, 0.78) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .project-card-trigger.project-gallery-card:hover,
+    .project-card-trigger.project-gallery-card:focus-visible {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 64px rgba(18, 73, 68, 0.16);
+      border-color: rgba(34, 153, 132, 0.34);
+    }
+    .project-card-trigger.project-gallery-card:focus-visible {
+      outline: 3px solid rgba(34, 153, 132, 0.28);
+      outline-offset: 4px;
+    }
+    .project-gallery-media {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      background: #dce9e6;
+      overflow: hidden;
+    }
+    .project-gallery-item.is-tall .project-gallery-media {
+      aspect-ratio: 4 / 5;
+    }
+    .project-gallery-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .project-gallery-media--placeholder {
+      display: flex;
+      align-items: flex-end;
+      padding: 1.2rem;
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.28), transparent 32%),
+        linear-gradient(135deg, #145448 0%, #229984 48%, #5eb9a2 100%);
+    }
+    .project-gallery-placeholder-mark {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .project-card-trigger.project-gallery-card:hover .project-gallery-media img,
+    .project-card-trigger.project-gallery-card:focus-visible .project-gallery-media img {
+      transform: scale(1.04);
+    }
+    .project-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.1rem;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .project-gallery-eyebrow,
+    .project-gallery-action {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .project-gallery-eyebrow {
+      background: rgba(255, 255, 255, 0.82);
+      color: #145448;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .project-gallery-action {
+      background: rgba(10, 24, 29, 0.68);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+    .project-gallery-body {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 0.9rem;
+      margin-top: -7.25rem;
+      padding: 0 1.2rem 1.25rem;
+    }
+    .project-gallery-copy {
+      display: grid;
+      gap: 0.7rem;
+      padding: 1.15rem;
+      border-radius: 22px;
+      background: rgba(9, 25, 30, 0.82);
+      box-shadow: 0 14px 32px rgba(8, 17, 24, 0.18);
+    }
+    .project-card-title {
+      margin: 0;
+      color: #ffffff !important;
+      line-height: 1.15 !important;
+    }
+    .project-gallery-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0;
+    }
+    .project-gallery-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.36rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #dff5ef;
+      font-size: 0.82rem;
+      line-height: 1.2;
+    }
+    .project-gallery-summary {
+      margin: 0;
+      color: rgba(244, 249, 248, 0.92) !important;
+      line-height: 1.55 !important;
+    }
+    .project-gallery-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      color: #145448;
+    }
+    .project-gallery-link-text {
+      font-weight: 700;
+      color: #229984;
+      line-height: 1.3 !important;
+    }
+    .project-gallery-link-icon {
+      flex: 0 0 auto;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34, 153, 132, 0.12);
+      color: #229984;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .project-gallery-note {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(34, 153, 132, 0.12);
+      box-shadow: 0 16px 32px rgba(18, 73, 68, 0.07);
+    }
+    @media (max-width: 991px) {
+      .project-gallery-item.is-featured,
+      .project-gallery-item.is-standard {
+        grid-column: span 6;
+      }
+      .project-gallery-item.is-tall .project-gallery-media {
+        aspect-ratio: 16 / 11;
+      }
+    }
+    @media (max-width: 767px) {
+      .project-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .project-gallery-item.is-featured,
+      .project-gallery-item.is-standard {
+        grid-column: auto;
+      }
+      .project-gallery-body {
+        margin-top: -6rem;
+        padding: 0 1rem 1rem;
+      }
+      .project-gallery-copy {
+        padding: 1rem;
+      }
+      .project-gallery-footer {
+        align-items: flex-start;
+      }
     }
     .header5 .mbr-section-btn .btn {
       color: #f7fbfa !important;
@@ -712,8 +980,12 @@
       <h4 class="soundcloud-modal-title mbr-fonts-style display-5"><strong data-portfolio-modal-title>Featured project</strong></h4>
       <p class="mbr-text mbr-fonts-style display-7 portfolio-project-meta" data-portfolio-modal-meta>2024 · University</p>
       <p class="mbr-text mbr-fonts-style display-7 portfolio-project-summary" data-portfolio-modal-summary>Project summary.</p>
-      <img class="portfolio-project-main-image" data-portfolio-modal-image src="assets/images/projects-portfolio/ciberpunk-race-01.png" alt="Main project view" loading="lazy">
+      <img class="portfolio-project-main-image portfolio-project-media" data-portfolio-modal-image src="assets/images/projects-portfolio/ciberpunk-race-01.png" alt="Main project view" loading="lazy">
       <div class="portfolio-project-thumbs" data-portfolio-modal-thumbs></div>
+      <iframe class="portfolio-project-video" data-portfolio-modal-video title="Project video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="portfolio-project-actions">
+        <a class="btn btn-primary display-7 portfolio-project-action-link" data-portfolio-modal-link href="#" target="_blank" rel="noopener noreferrer">Open project</a>
+      </div>
       <p class="mbr-text mbr-fonts-style display-7" data-portfolio-modal-description>Detailed project description.</p>
       <div class="portfolio-project-facts">
         <div class="portfolio-project-fact mbr-text mbr-fonts-style display-7"><strong>Role</strong><span data-portfolio-modal-role>Direction and development</span></div>
@@ -963,9 +1235,10 @@
           </div>
         </div>
       </div>
-      <div class="row mbr-gallery mbr-masonry" data-masonry="{&quot;percentPosition&quot;: true }">
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+      <div class="project-gallery-shell">
+        <div class="project-gallery-grid">
+        <div class="project-gallery-item is-featured">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Ciberpunk Race"
             data-portfolio-meta="2024 · Universidad Militar Nueva Granada"
@@ -975,13 +1248,37 @@
             data-portfolio-tech="Unity3D, digital art, 3D models, AI-assisted experimentation"
             data-portfolio-impact="Presented as an integrative experience for Imaginatio 2024, strengthening program visibility and student-group participation"
             data-portfolio-highlights="Playable experience designed for a live academic event|Integration of artwork and models created or adapted by students|Collaborative production process connected to research groups"
-            data-portfolio-images="assets/images/projects-portfolio/ciberpunk-race-01.png|assets/images/projects-portfolio/ciberpunk-race-02.png|assets/images/projects-portfolio/ciberpunk-race-03.png|assets/images/projects-portfolio/ciberpunk-race-04.png">
-            <img class="w-100" src="assets/images/projects-portfolio/ciberpunk-race-01.png" alt="Ciberpunk Race - Imaginatio 2024" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>Ciberpunk Race</strong></p>
+            data-portfolio-link="https://animako.net/cyberpunkrace/"
+            data-portfolio-link-label="Play at animako.net/cyberpunkrace/"
+            data-portfolio-video="https://www.youtube.com/embed/XpuEJ5bSIVM"
+            data-portfolio-images="assets/images/projects-portfolio/ciberpunk-race-01.png|assets/images/projects-portfolio/ciberpunk-race-02.png|assets/images/projects-portfolio/ciberpunk-race-03.png|assets/images/projects-portfolio/ciberpunk-race-04.png"
+            aria-label="Open project details for Ciberpunk Race">
+            <div class="project-gallery-media">
+              <img class="w-100" src="assets/images/projects-portfolio/ciberpunk-race-01.png" alt="Ciberpunk Race - Imaginatio 2024" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Academic event · 2024</span>
+                <span class="project-gallery-action">Explore project</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Ciberpunk Race</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Unity3D</span>
+                  <span class="project-gallery-chip">Digital art</span>
+                  <span class="project-gallery-chip">Experimental AI</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Collaborative game for Imaginatio 2024 with experience direction, student research-group production and an exhibition-ready visual identity.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">View full case study</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+        <div class="project-gallery-item is-standard">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="PIBO"
             data-portfolio-meta="2018 · Universidad de San Buenaventura"
@@ -991,13 +1288,33 @@
             data-portfolio-tech="Unity3D, UI design, interactive logic, psychoeducational digital resource"
             data-portfolio-impact="Provided a support resource for educational processes focused on emotional recognition and specialized guidance"
             data-portfolio-highlights="Educational application centered on emotion recognition|Unity3D development with accessibility and guided interaction in mind|Intersection of technology and psychoeducational support needs"
-            data-portfolio-images="assets/images/projects-portfolio/pibo-01.png|assets/images/projects-portfolio/pibo-02.png">
-            <img class="w-100" src="assets/images/projects-portfolio/pibo-01.png" alt="PIBO - emotions learning application" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>PIBO</strong></p>
+            data-portfolio-images="assets/images/projects-portfolio/pibo-01.png|assets/images/projects-portfolio/pibo-02.png"
+            aria-label="Open project details for PIBO">
+            <div class="project-gallery-media">
+              <img class="w-100" src="assets/images/projects-portfolio/pibo-01.png" alt="PIBO - emotions learning application" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Education · 2018</span>
+                <span class="project-gallery-action">Explore project</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>PIBO</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Unity3D</span>
+                  <span class="project-gallery-chip">Accessible UI</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Psychoeducational application for emotional recognition built around guided interaction and visual clarity.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">View full case study</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+        <div class="project-gallery-item is-standard is-tall">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Mounted Shooting Simulator"
             data-portfolio-meta="2016 · IMPORTEQ SAS"
@@ -1007,13 +1324,34 @@
             data-portfolio-tech="Unity3D, Python, Arduino, serial communication, 3D simulation"
             data-portfolio-impact="Enabled specialized training exercises in an interactive environment with traceable physical-event integration"
             data-portfolio-highlights="Unity3D integration with physical peripherals and serial communication|Arduino and Python used for event detection and tracking|Simulation project aimed at specialized training contexts"
-            data-portfolio-images="assets/images/projects-portfolio/mounted-shooting-01.png|assets/images/projects-portfolio/mounted-shooting-02.png|assets/images/projects-portfolio/mounted-shooting-03.png|assets/images/projects-portfolio/mounted-shooting-04.png">
-            <img class="w-100" src="assets/images/projects-portfolio/mounted-shooting-01.png" alt="Mounted Shooting Simulator" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>Mounted Shooting Simulator</strong></p>
+            data-portfolio-images="assets/images/projects-portfolio/mounted-shooting-01.png|assets/images/projects-portfolio/mounted-shooting-02.png|assets/images/projects-portfolio/mounted-shooting-03.png|assets/images/projects-portfolio/mounted-shooting-04.png"
+            aria-label="Open project details for Mounted Shooting Simulator">
+            <div class="project-gallery-media">
+              <img class="w-100" src="assets/images/projects-portfolio/mounted-shooting-01.png" alt="Mounted Shooting Simulator" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Simulation · 2016</span>
+                <span class="project-gallery-action">Explore project</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Mounted Shooting Simulator</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Unity3D</span>
+                  <span class="project-gallery-chip">Arduino</span>
+                  <span class="project-gallery-chip">Python</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Interactive training environment with serial integration and shot tracking tied to a physical practice system.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">View full case study</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+        <div class="project-gallery-item is-standard">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Agua para el Futuro"
             data-portfolio-meta="2015 · IG Consultores / FEMSA Coca-Cola"
@@ -1023,13 +1361,33 @@
             data-portfolio-tech="Unity3D, mechanic design, serious games, environmental education"
             data-portfolio-impact="Turned sustainability content into an engaging experience for awareness and decision-making"
             data-portfolio-highlights="Primary development of the game logic|Serious-game approach for environmental education|Unity3D implementation supported by curated visual assets to streamline production"
-            data-portfolio-images="assets/images/projects-portfolio/agua-futuro-01.png|assets/images/projects-portfolio/agua-futuro-02.png|assets/images/projects-portfolio/agua-futuro-03.png|assets/images/projects-portfolio/agua-futuro-04.png">
-            <img class="w-100" src="assets/images/projects-portfolio/agua-futuro-01.png" alt="Agua para el Futuro" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>Agua para el Futuro</strong></p>
+            data-portfolio-images="assets/images/projects-portfolio/agua-futuro-01.png|assets/images/projects-portfolio/agua-futuro-02.png|assets/images/projects-portfolio/agua-futuro-03.png|assets/images/projects-portfolio/agua-futuro-04.png"
+            aria-label="Open project details for Agua para el Futuro">
+            <div class="project-gallery-media">
+              <img class="w-100" src="assets/images/projects-portfolio/agua-futuro-01.png" alt="Agua para el Futuro" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Serious game · 2015</span>
+                <span class="project-gallery-action">Explore project</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Agua para el Futuro</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Sustainability</span>
+                  <span class="project-gallery-chip">Unity3D</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Strategy game that translates water-conservation concepts into memorable, decision-driven play.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">View full case study</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+        <div class="project-gallery-item is-standard">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Huella Hídrica"
             data-portfolio-meta="2015 · IG Consultores / FEMSA Coca-Cola"
@@ -1039,13 +1397,33 @@
             data-portfolio-tech="Unity3D, 2D design, interactive trivia, outreach content"
             data-portfolio-impact="Made responsible-consumption messages easier to communicate through short, accessible formats"
             data-portfolio-highlights="Short-form educational experience designed for easy adoption|Trivia mechanics used to reinforce learning|Project focused on environmental awareness and responsible consumption"
-            data-portfolio-images="assets/images/projects-portfolio/huella-hidrica-01.png|assets/images/projects-portfolio/huella-hidrica-02.png|assets/images/projects-portfolio/huella-hidrica-03.png|assets/images/projects-portfolio/huella-hidrica-04.png">
-            <img class="w-100" src="assets/images/projects-portfolio/huella-hidrica-01.png" alt="Huella Hídrica" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>Huella Hídrica</strong></p>
+            data-portfolio-images="assets/images/projects-portfolio/huella-hidrica-01.png|assets/images/projects-portfolio/huella-hidrica-02.png|assets/images/projects-portfolio/huella-hidrica-03.png|assets/images/projects-portfolio/huella-hidrica-04.png"
+            aria-label="Open project details for Huella Hídrica">
+            <div class="project-gallery-media">
+              <img class="w-100" src="assets/images/projects-portfolio/huella-hidrica-01.png" alt="Huella Hídrica" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Environmental awareness · 2015</span>
+                <span class="project-gallery-action">Explore project</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Huella Hídrica</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">2D</span>
+                  <span class="project-gallery-chip">Interactive trivia</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Short-form trivia experience designed to communicate responsible-consumption habits in an accessible format.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">View full case study</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+        <div class="project-gallery-item is-featured">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Toteando Cueros"
             data-portfolio-meta="2012 · Universidad de San Buenaventura"
@@ -1055,13 +1433,73 @@
             data-portfolio-tech="Unity3D, Flash, GameSalad, musical interaction, traditional-percussion-inspired interface"
             data-portfolio-impact="Connected Colombian sound heritage with interactive digital formats inside an academic research context"
             data-portfolio-highlights="Integration of music, cultural identity and digital interaction|Development across Unity3D, Flash and GameSalad at different project stages|Interface inspired by traditional Caribbean percussion"
-            data-portfolio-images="assets/images/projects-portfolio/toteando-cueros-01.jpeg|assets/images/projects-portfolio/toteando-cueros-02.png">
-            <img class="w-100" src="assets/images/projects-portfolio/toteando-cueros-01.jpeg" alt="Toteando Cueros" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>Toteando Cueros</strong></p>
+            data-portfolio-images="assets/images/projects-portfolio/toteando-cueros-01.jpeg|assets/images/projects-portfolio/toteando-cueros-02.png"
+            aria-label="Open project details for Toteando Cueros">
+            <div class="project-gallery-media">
+              <img class="w-100" src="assets/images/projects-portfolio/toteando-cueros-01.jpeg" alt="Toteando Cueros" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Interactive music · 2012</span>
+                <span class="project-gallery-action">Explore project</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Toteando Cueros</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Colombian folk</span>
+                  <span class="project-gallery-chip">Research</span>
+                  <span class="project-gallery-chip">Musical interaction</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Musical simulation linking sound heritage, embodied gesture and digital interface through a Caribbean-inspired concept.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">View full case study</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 item gallery-image">
-          <a class="item-wrapper project-card-trigger" href="#"
+        <div class="project-gallery-item is-standard is-tall">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+            data-open-project
+            data-project-title="Alas del Calabozo"
+            data-project-src="https://ingenmultimedia.github.io/AlasdelCalabozo/"
+            data-project-summary="Playable web project added to the portfolio as an interactive browser-based experience."
+            data-project-description="Alas del Calabozo is integrated into the portfolio as an interactive project that can be launched directly from the site. The card opens the experience inside the embedded project modal to preserve continuity, while still offering the external link for opening it in a separate tab."
+            data-project-role="Interactive project published for web access"
+            data-project-tech="Unity WebGL, web deployment, interactive experience"
+            data-project-impact="Expands the portfolio sample with a playable experience accessible directly from the site"
+            data-project-link="https://ingenmultimedia.github.io/AlasdelCalabozo/"
+            data-project-link-label="ingenmultimedia.github.io/AlasdelCalabozo/"
+            data-project-aspect-ratio="16 / 9"
+            data-project-min-height="min(72vh, 760px)"
+            data-project-max-width="100%"
+            aria-label="Open the Alas del Calabozo project demo">
+            <div class="project-gallery-media project-gallery-media--placeholder">
+              <span class="project-gallery-placeholder-mark">Interactive web demo</span>
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">New project · Web</span>
+                <span class="project-gallery-action">Open demo</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Alas del Calabozo</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Unity WebGL</span>
+                  <span class="project-gallery-chip">Playable web</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">Playable interactive experience incorporated into the portfolio with direct browser access.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">Open project</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="project-gallery-item is-standard is-tall">
+          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-project
             data-project-title="Metamundos"
             data-project-src="https://www.youtube.com/embed/mdbj9Obv95k"
@@ -1074,15 +1512,36 @@
                 data-project-link-label="youtu.be/mdbj9Obv95k"
                 data-project-aspect-ratio="16 / 9"
             data-project-min-height="min(72vh, 760px)"
-            data-project-max-width="100%">
-            <img class="w-100" src="https://img.youtube.com/vi/mdbj9Obv95k/hqdefault.jpg" alt="Metamundos - immersive virtual reality experience" loading="lazy">
-            <p class="project-card-title mbr-fonts-style display-7"><strong>Metamundos</strong></p>
+            data-project-max-width="100%"
+            aria-label="Open the Metamundos project demo">
+            <div class="project-gallery-media">
+              <img class="w-100" src="https://img.youtube.com/vi/mdbj9Obv95k/hqdefault.jpg" alt="Metamundos - immersive virtual reality experience" loading="lazy">
+              <div class="project-gallery-overlay">
+                <span class="project-gallery-eyebrow">Cultural XR · Demo video</span>
+                <span class="project-gallery-action">Watch demo</span>
+              </div>
+            </div>
+            <div class="project-gallery-body">
+              <div class="project-gallery-copy">
+                <p class="project-card-title mbr-fonts-style display-5"><strong>Metamundos</strong></p>
+                <p class="project-gallery-meta mbr-fonts-style display-7">
+                  <span class="project-gallery-chip">Meta Quest</span>
+                  <span class="project-gallery-chip">Spatial audio</span>
+                </p>
+                <p class="project-gallery-summary mbr-fonts-style display-7">XR journey through cultural territories with sensory activities, body-based interaction and local offline operation.</p>
+              </div>
+              <div class="project-gallery-footer">
+                <span class="project-gallery-link-text mbr-fonts-style display-7">Open immersive demo</span>
+                <span class="project-gallery-link-icon" aria-hidden="true">+</span>
+              </div>
+            </div>
           </a>
+        </div>
         </div>
       </div>
       <div class="row justify-content-center mt-4">
         <div class="col-12 col-lg-10">
-          <p class="mbr-text mbr-fonts-style align-center display-7">This selection brings together representative interactive-development projects: <strong>Ciberpunk Race</strong> for Imaginatio 2024, <strong>PIBO</strong> as an educational application for children with Asperger’s syndrome, the <strong>Mounted Shooting Simulator</strong> with serial integration and Arduino, the environmental-learning games <strong>Agua para el Futuro</strong> and <strong>Huella Hídrica</strong>, <strong>Toteando Cueros</strong> as a musical simulation videogame based on Colombian folk traditions, and <strong>Metamundos</strong> as an immersive virtual-reality experience with cultural and educational focus.</p>
+          <p class="mbr-text mbr-fonts-style align-center display-7 project-gallery-note">This selection brings together representative interactive-development projects: <strong>Ciberpunk Race</strong> for Imaginatio 2024, <strong>PIBO</strong> as an educational application for children with Asperger’s syndrome, the <strong>Mounted Shooting Simulator</strong> with serial integration and Arduino, the environmental-learning games <strong>Agua para el Futuro</strong> and <strong>Huella Hídrica</strong>, <strong>Toteando Cueros</strong> as a musical simulation videogame based on Colombian folk traditions, <strong>Alas del Calabozo</strong> as a playable web experience, and <strong>Metamundos</strong> as an immersive virtual-reality experience with cultural and educational focus.</p>
         </div>
       </div>
     </div>
@@ -1188,6 +1647,8 @@
       const portfolioSummary = document.querySelector('[data-portfolio-modal-summary]');
       const portfolioImage = document.querySelector('[data-portfolio-modal-image]');
       const portfolioThumbs = document.querySelector('[data-portfolio-modal-thumbs]');
+      const portfolioVideo = document.querySelector('[data-portfolio-modal-video]');
+      const portfolioLink = document.querySelector('[data-portfolio-modal-link]');
       const portfolioDescription = document.querySelector('[data-portfolio-modal-description]');
       const portfolioRole = document.querySelector('[data-portfolio-modal-role]');
       const portfolioTech = document.querySelector('[data-portfolio-modal-tech]');
@@ -1238,6 +1699,7 @@
         if (!portfolioImage || !portfolioThumbs || !portfolioImages.length) return;
         const safeIndex = Math.max(0, Math.min(index, portfolioImages.length - 1));
         portfolioImage.setAttribute('src', portfolioImages[safeIndex]);
+        portfolioImage.classList.remove('is-hidden');
         Array.from(portfolioThumbs.children).forEach((thumb, thumbIndex) => {
           thumb.classList.toggle('is-active', thumbIndex === safeIndex);
         });
@@ -1253,9 +1715,20 @@
         }
         if (portfolioImage) {
           portfolioImage.setAttribute('src', '');
+          portfolioImage.classList.add('is-hidden');
         }
         if (portfolioThumbs) {
           portfolioThumbs.innerHTML = '';
+          portfolioThumbs.classList.add('is-hidden');
+        }
+        if (portfolioVideo) {
+          portfolioVideo.setAttribute('src', '');
+          portfolioVideo.classList.remove('is-visible');
+        }
+        if (portfolioLink) {
+          portfolioLink.setAttribute('href', '#');
+          portfolioLink.textContent = 'Open project';
+          portfolioLink.classList.remove('is-visible');
         }
         portfolioImages = [];
       }
@@ -1400,26 +1873,47 @@
               portfolioHighlights.appendChild(li);
             });
           }
+          if (portfolioLink) {
+            const externalUrl = trigger.getAttribute('data-portfolio-link') || '';
+            portfolioLink.setAttribute('href', externalUrl || '#');
+            portfolioLink.textContent = trigger.getAttribute('data-portfolio-link-label') || externalUrl.replace(/^https?:\/\//, '');
+            portfolioLink.classList.toggle('is-visible', !!externalUrl);
+          }
+          if (portfolioVideo) {
+            const videoUrl = trigger.getAttribute('data-portfolio-video') || '';
+            portfolioVideo.setAttribute('src', videoUrl);
+            portfolioVideo.classList.toggle('is-visible', !!videoUrl);
+          }
           portfolioImages = (trigger.getAttribute('data-portfolio-images') || '').split('|').filter(Boolean);
           if (portfolioThumbs) {
             portfolioThumbs.innerHTML = '';
-            portfolioImages.forEach((imageSrc, imageIndex) => {
-              const thumb = document.createElement('button');
-              thumb.type = 'button';
-              thumb.className = 'portfolio-project-thumb';
-              thumb.setAttribute('aria-label', `View ${imageIndex + 1} of ${portfolioTitle.textContent}`);
-              const thumbImage = document.createElement('img');
-              thumbImage.setAttribute('src', imageSrc);
-              thumbImage.setAttribute('alt', portfolioTitle.textContent);
-              thumbImage.setAttribute('loading', 'lazy');
-              thumb.appendChild(thumbImage);
-              thumb.addEventListener('click', function () {
-                setActivePortfolioImage(imageIndex);
+            portfolioThumbs.classList.toggle('is-hidden', !portfolioImages.length);
+            if (portfolioImages.length) {
+              portfolioImages.forEach((imageSrc, imageIndex) => {
+                const thumb = document.createElement('button');
+                thumb.type = 'button';
+                thumb.className = 'portfolio-project-thumb';
+                thumb.setAttribute('aria-label', `View ${imageIndex + 1} of ${portfolioTitle.textContent}`);
+                const thumbImage = document.createElement('img');
+                thumbImage.setAttribute('src', imageSrc);
+                thumbImage.setAttribute('alt', portfolioTitle.textContent);
+                thumbImage.setAttribute('loading', 'lazy');
+                thumb.appendChild(thumbImage);
+                thumb.addEventListener('click', function () {
+                  setActivePortfolioImage(imageIndex);
+                });
+                portfolioThumbs.appendChild(thumb);
               });
-              portfolioThumbs.appendChild(thumb);
-            });
+            }
           }
-          setActivePortfolioImage(0);
+          if (portfolioImage) {
+            portfolioImage.classList.toggle('is-hidden', !portfolioImages.length);
+          }
+          if (portfolioImages.length) {
+            setActivePortfolioImage(0);
+          } else if (portfolioImage) {
+            portfolioImage.setAttribute('src', '');
+          }
           const portfolioCard = portfolioModal.querySelector('.portfolio-project-card');
           if (portfolioCard) {
             portfolioCard.scrollTop = 0;
