@@ -360,24 +360,21 @@
       background: linear-gradient(90deg, transparent, rgba(34, 153, 132, 0.28), transparent);
       transform: translateX(-50%);
     }
-    .project-gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 1.25rem;
-      align-items: stretch;
+    .project-gallery-carousel {
+      padding: 0 0.5rem;
     }
-    .project-gallery-item {
-      display: flex;
-      min-width: 0;
+    .project-gallery-track {
+      overflow: visible;
     }
-    .project-gallery-item.is-featured {
-      grid-column: span 6;
+    .project-gallery-slide {
+      padding: 0.85rem 4.5rem 1.6rem;
     }
-    .project-gallery-item.is-standard {
-      grid-column: span 3;
+    .project-gallery-slide .project-gallery-card {
+      max-width: 980px;
+      margin: 0 auto;
     }
-    .project-gallery-item.is-tall .project-gallery-card {
-      min-height: 100%;
+    .project-gallery-slide.is-compact .project-gallery-card {
+      max-width: 860px;
     }
     .project-card-trigger.project-gallery-card {
       position: relative;
@@ -417,7 +414,7 @@
       background: #dce9e6;
       overflow: hidden;
     }
-    .project-gallery-item.is-tall .project-gallery-media {
+    .project-gallery-slide.is-tall .project-gallery-media {
       aspect-ratio: 4 / 5;
     }
     .project-gallery-media img {
@@ -561,22 +558,61 @@
       border: 1px solid rgba(34, 153, 132, 0.12);
       box-shadow: 0 16px 32px rgba(18, 73, 68, 0.07);
     }
+    .project-gallery-indicators {
+      position: static;
+      margin: 0.25rem 0 0;
+      gap: 0.55rem;
+    }
+    .project-gallery-indicators [data-bs-target] {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 0;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(20, 84, 72, 0.22);
+      opacity: 1;
+    }
+    .project-gallery-indicators .active {
+      background: #229984;
+      transform: scale(1.15);
+    }
+    .project-gallery-control {
+      width: auto;
+      opacity: 1;
+    }
+    .project-gallery-control span[aria-hidden="true"] {
+      width: 3rem;
+      height: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(34, 153, 132, 0.18);
+      color: #145448;
+      font-size: 2rem;
+      line-height: 1;
+      box-shadow: 0 14px 30px rgba(18, 73, 68, 0.12);
+    }
+    .project-gallery-control:hover span[aria-hidden="true"],
+    .project-gallery-control:focus span[aria-hidden="true"] {
+      background: #229984;
+      color: #ffffff;
+    }
     @media (max-width: 991px) {
-      .project-gallery-item.is-featured,
-      .project-gallery-item.is-standard {
-        grid-column: span 6;
+      .project-gallery-slide {
+        padding: 0.75rem 3.6rem 1.35rem;
       }
-      .project-gallery-item.is-tall .project-gallery-media {
+      .project-gallery-slide.is-tall .project-gallery-media {
         aspect-ratio: 16 / 11;
       }
     }
     @media (max-width: 767px) {
-      .project-gallery-grid {
-        grid-template-columns: 1fr;
+      .project-gallery-carousel {
+        padding: 0;
       }
-      .project-gallery-item.is-featured,
-      .project-gallery-item.is-standard {
-        grid-column: auto;
+      .project-gallery-slide {
+        padding: 0.5rem 0.2rem 1rem;
       }
       .project-gallery-body {
         margin-top: -6rem;
@@ -587,6 +623,9 @@
       }
       .project-gallery-footer {
         align-items: flex-start;
+      }
+      .project-gallery-control {
+        display: none;
       }
     }
     .header5 .mbr-section-btn .btn {
@@ -1235,9 +1274,21 @@
         </div>
       </div>
       <div class="project-gallery-shell">
-        <div class="project-gallery-grid">
-        <div class="project-gallery-item is-featured">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+        <div id="projects-carousel-es" class="carousel slide project-gallery-carousel" data-bs-ride="false" data-bs-touch="true" data-bs-interval="false">
+          <div class="carousel-indicators project-gallery-indicators">
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Proyecto 1"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="1" aria-label="Proyecto 2"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="2" aria-label="Proyecto 3"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="3" aria-label="Proyecto 4"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="4" aria-label="Proyecto 5"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="5" aria-label="Proyecto 6"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="6" aria-label="Proyecto 7"></button>
+            <button type="button" data-bs-target="#projects-carousel-es" data-bs-slide-to="7" aria-label="Proyecto 8"></button>
+          </div>
+          <div class="carousel-inner project-gallery-track">
+            <div class="carousel-item active">
+              <div class="project-gallery-slide">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Ciberpunk Race"
             data-portfolio-meta="2024 · Universidad Militar Nueva Granada"
@@ -1274,10 +1325,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-standard">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide is-compact">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="PIBO"
             data-portfolio-meta="2018 · Universidad de San Buenaventura"
@@ -1310,10 +1363,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-standard is-tall">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide is-compact is-tall">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Mounted Shooting Simulator"
             data-portfolio-meta="2016 · IMPORTEQ SAS"
@@ -1347,10 +1402,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-standard">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide is-compact">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Agua para el Futuro"
             data-portfolio-meta="2015 · IG Consultores / FEMSA Coca-Cola"
@@ -1383,10 +1440,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-standard">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide is-compact">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Huella Hídrica"
             data-portfolio-meta="2015 · IG Consultores / FEMSA Coca-Cola"
@@ -1419,10 +1478,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-featured">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-portfolio
             data-portfolio-title="Toteando Cueros"
             data-portfolio-meta="2012 · Universidad de San Buenaventura"
@@ -1456,10 +1517,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-standard is-tall">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide is-compact is-tall">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-project
             data-project-title="Alas del Calabozo"
             data-project-src="https://ingenmultimedia.github.io/AlasdelCalabozo/"
@@ -1496,10 +1559,12 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="project-gallery-item is-standard is-tall">
-          <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
+                </a>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="project-gallery-slide is-compact is-tall">
+                <a class="item-wrapper project-card-trigger project-gallery-card" href="#"
             data-open-project
             data-project-title="Metamundos"
             data-project-src="https://www.youtube.com/embed/mdbj9Obv95k"
@@ -1535,8 +1600,18 @@
                 <span class="project-gallery-link-icon" aria-hidden="true">+</span>
               </div>
             </div>
-          </a>
-        </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev project-gallery-control" type="button" data-bs-target="#projects-carousel-es" data-bs-slide="prev">
+            <span aria-hidden="true">‹</span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next project-gallery-control" type="button" data-bs-target="#projects-carousel-es" data-bs-slide="next">
+            <span aria-hidden="true">›</span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
       </div>
       <div class="row justify-content-center mt-4">
